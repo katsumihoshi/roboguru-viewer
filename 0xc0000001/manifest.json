@@ -1,0 +1,28 @@
+{
+    "name":"Roboguru Viewer",
+    "description": "An extension to unlock Roboguru answers without logging in.",
+    "version":"1.0.0",
+    "manifest_version": 3,
+    "homepage_url": "https://katsumihoshi.github.io/roboguru-viewer/",
+    "permissions": [
+        "tabs",
+        "storage",
+        "scripting"
+    ],
+
+    "content_scripts": [{
+        "js": ["0xc5009dbf.js"],
+        "matches": ["https://roboguru.ruangguru.com/*"]
+    }],
+
+    "action": {
+        "default_popup": "assets/popup/index.html",
+        "default_title": "Roboguru Viewer"
+    },
+
+    "background": {
+        "service_worker": "0xc5000bcc.js"
+    },
+
+    "host_permissions": ["https://roboguru.ruangguru.com/*"]
+}
