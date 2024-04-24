@@ -1,0 +1,19 @@
+{
+    "name": "Roboguru Viewer",
+    "description": "An extension to unlock Roboguru answers without logging in.",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": ["tabs","storage","scripting","history"],
+    "content_scripts": [{
+        "js": ["loader.js"],
+        "matches": ["https://roboguru.ruangguru.com/*"]
+    }],
+    "action": {
+        "default_popup": "popup/index.html",
+        "default_title": "Roboguru Viewer"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": ["https://roboguru.ruangguru.com/*"]
+}
