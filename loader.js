@@ -48,7 +48,5 @@ function elementManager(data) {
     if (data.MasterSwitch) {
         setTimeout(answerFix, 1000);
         setTimeout(overlayFix, 2000);
-    } else if (data.MasterSwitch === false) {
-        location.reload();
     }
 }

@@ -16,10 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update settings values
         Activator.addEventListener('change', function() {
             chrome.storage.sync.set({MasterSwitch: this.checked});
+            initiateReload();
             refreshScript();
         })
     }
 });
+
+function initiateReload() {
+    var reloadChangeDiv = document.getElementById("reload-change-div");
+    var reloadNotif = document.getElementById("reload-notification");
+    reloadChangeDiv.style.paddingBottom = "5px";
+    reloadNotif.style.display = "flex";
+}
 
 function refreshScript() {
     chrome.tabs.query({url: "https://roboguru.ruangguru.com/"}, function(tabs) {
